@@ -1,13 +1,8 @@
-<%% title "<%= singular_name.titleize %>" %>
+<%% title <%= singular_name.titleize %>.human_name %>
 
-<%- for attribute in attributes -%>
-<p>
-  <strong><%= attribute.column.human_name.titleize %>:</strong>
-  <%%=h @<%= singular_name %>.<%= attribute.name %> %>
-</p>
-<%- end -%>
+<table>
 
-<p>
+  <tr><td colspan="2">
 <%- if action? :edit -%>
   <%%= link_to "Edit", edit_<%= singular_name %>_path(@<%= singular_name %>) %> |
 <%- end -%>
@@ -17,4 +12,15 @@
 <%- if action? :index -%>
   <%%= link_to "View All", <%= plural_name %>_path %>
 <%- end -%>
-</p>
+  </td></tr>
+
+<%- for attribute in attributes -%>
+  <tr>
+    <td class="label"><%= attribute.column.human_name.titleize %>:</td>
+    <td><%%=h @<%= singular_name %>.<%= attribute.name %> %></td>
+  </tr>
+<%- end -%>
+
+</table>
+
+

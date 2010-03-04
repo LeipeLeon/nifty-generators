@@ -1,10 +1,10 @@
 <%% form_for @<%= singular_name %> do |f| %>
   <%%= f.error_messages %>
 <%- for attribute in attributes -%>
-  <p>
-    <%%= f.label :<%= attribute.name %> %><br />
-    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
-  </p>
+  <tr>
+    <td class="label"><%%= f.label :<%= attribute.name %> %></td>
+    <td><%%= f.<%= attribute.field_type %> :<%= attribute.name %> %></td>
+  </tr>
 <%- end -%>
   <p><%%= f.submit "Submit" %></p>
 <%% end %>
