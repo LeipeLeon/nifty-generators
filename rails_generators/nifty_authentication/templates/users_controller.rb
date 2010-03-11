@@ -9,7 +9,7 @@ class <%= user_plural_class_name %>Controller < ApplicationController
     <%- unless options[:authlogic] -%>
       session[:<%= user_singular_name %>_id] = @<%= user_singular_name %>.id
     <%- end -%>
-      flash[:notice] = "Thank you for signing up! You are now logged in."
+      flash[:success] = "Thank you for signing up! You are now logged in."
       redirect_to root_url
     else
       render :action => 'new'
