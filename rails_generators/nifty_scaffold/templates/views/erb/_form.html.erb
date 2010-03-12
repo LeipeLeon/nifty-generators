@@ -6,5 +6,8 @@
     <td><%%= f.<%= attribute.field_type %> :<%= attribute.name %> %></td>
   </tr>
 <%- end -%>
-  <p><%%= f.submit "Submit" %></p>
+  <tr>
+    <td class="label">&nbsp;</td>
+    <td colspan="2"><%%= f.submit t('form.submit') %></td>
+  </tr>
 <%% end %>

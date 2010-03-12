@@ -1,14 +1,14 @@
-<%% title t('form.edit') + <%= singular_name.titleize %>.human_name %>
+<%% title t('form.edit') + " " + <%= class_name %>.human_name %>
 
 <table>
 
 <%- if actions? :show, :index -%>
   <tr><td colspan="2">
 <%- if action? :show -%>
-    <%%= link_to "Show", @<%= singular_name %> %> |
+    <%%= link_to t('form.show'), @<%= singular_name %> %> |
 <%- end -%>
 <%- if action? :index -%>
-    <%%= link_to "View All", <%= plural_name %>_path %>
+    <%%= link_to t('form.view_all'), <%= plural_name %>_path %>
 <%- end -%>
   </td></tr>
 <%- end -%>

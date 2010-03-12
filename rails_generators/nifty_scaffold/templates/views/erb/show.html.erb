@@ -1,22 +1,22 @@
-<%% title <%= singular_name.titleize %>.human_name %>
+<%% title <%= class_name %>.human_name %>
 
 <table>
 
   <tr><td colspan="2">
 <%- if action? :edit -%>
-  <%%= link_to "Edit", edit_<%= singular_name %>_path(@<%= singular_name %>) %> |
+  <%%= link_to t('form.edit'), edit_<%= singular_name %>_path(@<%= singular_name %>) %> |
 <%- end -%>
 <%- if action? :destroy -%>
-  <%%= link_to "Destroy", @<%= singular_name %>, :confirm => 'Are you sure?', :method => :delete %> |
+  <%%= link_to t('form.destroy'), @<%= singular_name %>, :confirm => 'Are you sure?', :method => :delete %> |
 <%- end -%>
 <%- if action? :index -%>
-  <%%= link_to "View All", <%= plural_name %>_path %>
+  <%%= link_to t('form.view_all'), <%= plural_name %>_path %>
 <%- end -%>
   </td></tr>
 
 <%- for attribute in attributes -%>
   <tr>
-    <td class="label"><%= attribute.column.human_name.titleize %>:</td>
+    <td class="label"><%%= <%= class_name %>.human_attribute_name(:<%= attribute.name %>) %></td>
     <td><%%=h @<%= singular_name %>.<%= attribute.name %> %></td>
   </tr>
 <%- end -%>
