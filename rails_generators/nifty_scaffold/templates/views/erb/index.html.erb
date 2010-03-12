@@ -10,6 +10,13 @@
     <th><%%= <%= class_name %>.human_attribute_name(:<%= attribute.name %>) %></th>
   <%- end -%>
   </tr>
+
+  <tr>
+    <th colspan="<%= attributes.length + 1 %>">
+      <%%= will_paginate @<%= plural_name %> %>
+    </th>
+  </tr>
+
   <%% for <%= singular_name %> in @<%= plural_name %> %>
     <tr>
     <%- for attribute in attributes -%>
