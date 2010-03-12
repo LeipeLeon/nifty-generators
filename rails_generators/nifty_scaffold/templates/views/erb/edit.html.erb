@@ -3,7 +3,7 @@
 <table>
 
 <%- if actions? :show, :index -%>
-  <tr><td colspan="2">
+  <tr><td colspan="3">
 <%- if action? :show -%>
     <%%= link_to t('form.show'), @<%= singular_name %> %> |
 <%- end -%>
