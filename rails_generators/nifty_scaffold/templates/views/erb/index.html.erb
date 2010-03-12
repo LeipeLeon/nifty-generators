@@ -5,6 +5,7 @@
 <%- end -%>
 
 <table>
+
   <tr>
   <%- for attribute in attributes -%>
     <th><%%= <%= class_name %>.human_attribute_name(:<%= attribute.name %>) %></th>
@@ -17,6 +18,8 @@
       <%%= will_paginate @<%= plural_name %> %>
     </th>
   </tr>
+
+  <%% if @<%= plural_name %>.present? %>
 
   <%% for <%= singular_name %> in @<%= plural_name %> %>
 
@@ -38,6 +41,15 @@
     </tr>
 
   <%% end %>
-</table>
+
+  <%% else %>
+
+    <tr>
+      <td colspan="<%= attributes.length + 1 %>">
+        <%%= t('form.edit', :model => <%= class_name %>.human_name) %>
+      </td>
+    </tr>
 
   <%% end %>
+
+</table>
