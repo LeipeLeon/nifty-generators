@@ -1,8 +1,8 @@
 <%% title <%= class_name %>.human_name %>
 
-<table>
+<table class="show">
 
-  <tr><td colspan="2">
+  <tr class="actions"><th colspan="2">
 <%- if action? :edit -%>
   <%%= link_to t('form.edit'), edit_<%= singular_name %>_path(@<%= singular_name %>) %> |
 <%- end -%>
@@ -12,7 +12,7 @@
 <%- if action? :index -%>
   <%%= link_to t('form.view_all'), <%= plural_name %>_path %>
 <%- end -%>
-  </td></tr>
+  </th></tr>
 
 <%- for attribute in attributes -%>
   <tr>

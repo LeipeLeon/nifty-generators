@@ -4,7 +4,7 @@
 <p><%%= link_to t('form.new') + " " + <%= class_name %>.human_name , new_<%= singular_name %>_path %></p>
 <%- end -%>
 
-<table>
+<table class="list">
 
   <tr>
   <%- for attribute in attributes -%>
@@ -13,17 +13,11 @@
     <th>Actions</th>
   </tr>
 
-  <tr>
-    <th colspan="<%= attributes.length + 1 %>">
-      <%%= will_paginate @<%= plural_name %> %>
-    </th>
-  </tr>
-
   <%% if @<%= plural_name %>.present? %>
 
   <%% for <%= singular_name %> in @<%= plural_name %> %>
 
-    <tr>
+    <tr class="<%%= cycle('odd','even') %>">
     <%- for attribute in attributes -%>
       <td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
     <%- end -%>
@@ -41,6 +35,12 @@
     </tr>
 
   <%% end %>
+
+  <tr class="pagination">
+    <th colspan="<%= attributes.length + 1 %>">
+      <%%= will_paginate @<%= plural_name %> %>
+    </th>
+  </tr>
 
   <%% else %>
 

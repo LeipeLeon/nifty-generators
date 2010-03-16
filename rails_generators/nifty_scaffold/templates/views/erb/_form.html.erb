@@ -6,8 +6,8 @@
     <td><%%= f.error_message_on :<%= attribute.name %> %></td>
   </tr>
 <%- end -%>
-  <tr>
-    <td class="label">&nbsp;</td>
-    <td colspan="2"><%%= f.submit t('form.submit') %></td>
+  <tr class="submit">
+    <th class="label">&nbsp;</th>
+    <th colspan="2"><%%= f.submit t('form.submit') %></th>
   </tr>
 <%% end %>

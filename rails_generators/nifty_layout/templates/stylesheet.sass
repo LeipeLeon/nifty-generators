@@ -6,10 +6,28 @@ body
     :family Verdana, Helvetica, Arial
     :size 14px
 
+h1, h2, h3, h4, h5
+  font-family: "Interstate", interstate-regular, "Lucida Grande", Helvetica, Arial, sans-serif
+  font-weight: normal
+  font-style: normal
+
+h1, h2
+  margin-top: 0px
+
 a
   :color #0000FF
+  :text-decoration none
+  :padding 2px 4px
+  :margin 0px 1px
+  :display inline-block
+  :border 1px outset #ddd
+  :background #ddd
   img
     :border none
+  &:hover
+    :border 1px inset #ddd
+    :background #ccc
+    :color #000080
 
 .clear
   :clear both
@@ -17,15 +35,14 @@ a
   :overflow hidden
 
 #container
-  :width 75%
+  // :width 75%
   :margin 0 auto
   :background #fff
   :padding 20px 40px
   :border solid 1px black
   :margin-top 20px
 
-#flash_notice,
-#flash_error
+#flash_notice, #flash_error
   :padding 5px 8px
   :margin 10px 0
 
@@ -65,3 +82,101 @@ a
     li
       :font-size 12px
       :list-style disc
+
+table.list
+  :width 100%
+  :font-family "Lucida Sans Unicode", "Lucida Grande", Sans-Serif
+  :font-size 12px
+  :background #fff
+  :border-collapse collapse
+  :text-align left
+  th
+    :font-size 14px
+    :font-weight normal
+    :color #039
+    :padding 4px 8px
+    :border-bottom 1px solid #6678b1
+    &.pagination
+      :border-top 1px solid #6678b1
+      :border-bottom 0px solid #6678b1
+      :text-align center
+  td
+    :border-bottom 1px solid #ccc
+    :color #669
+    :padding 2px 8px
+    &.label
+      :text-align right
+      :vertical-align text-top
+      :font-weight bold
+  tbody 
+    tr
+      &:hover
+        td
+          :color #009
+      &.odd
+      &.even
+
+table.show
+  :width 100%
+  :font-family "Lucida Sans Unicode", "Lucida Grande", Sans-Serif
+  :font-size 12px
+  :background #fff
+  :border-collapse collapse
+  :text-align left
+  :border 1px solid #6678b1
+  th
+    :font-size 14px
+    :font-weight normal
+    :color #fff
+    :padding 4px 8px
+    :border-bottom 1px solid #6678b1
+  td
+    :color #669
+    :padding 2px 8px
+    &.label
+      :width 150px
+      :color #039
+      :text-align right
+      :vertical-align text-top
+      :font-weight bold
+  tbody 
+    tr
+      &:hover
+        td
+          :color #009
+      &.odd
+      &.even
+
+table.form
+  :width 100%
+  :font-family "Lucida Sans Unicode", "Lucida Grande", Sans-Serif
+  :font-size 12px
+  :background #fff
+  :border-collapse collapse
+  :text-align left
+  :border 1px solid #6678b1
+  th
+    :font-size 14px
+    :font-weight normal
+    :color #fff
+    :padding 4px 8px
+    :border-bottom 1px solid #6678b1
+  td
+    :color #669
+    :padding 2px 8px
+    &.label
+      :width 150px
+      :color #039
+      :text-align right
+      :vertical-align text-top
+      :font-weight bold
+  tbody 
+    tr
+      &.submit
+        :border-top 1px solid #6678b1
+      &:hover
+        td
+          :color #009
+      &.odd
+      &.even
+
