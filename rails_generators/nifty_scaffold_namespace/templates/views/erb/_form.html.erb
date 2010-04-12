@@ -1,0 +1,13 @@
+<%% form_for <%= namespaced_singular_name %> do |f| %>
+<%- for attribute in attributes -%>
+  <tr>
+    <td class="label"><%%= f.label :<%= attribute.name %> %></td>
+    <td><%%= f.<%= attribute.field_type %> :<%= attribute.name %> %></td>
+    <td><%%= f.error_message_on :<%= attribute.name %> %></td>
+  </tr>
+<%- end -%>
+  <tr class="submit">
+    <th class="label">&nbsp;</th>
+    <th colspan="2"><%%= f.submit t('form.submit') %></th>
+  </tr>
+<%% end %>

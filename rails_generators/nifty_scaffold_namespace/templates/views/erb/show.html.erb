@@ -1,0 +1,26 @@
+<%% title <%= namespaced_class_name %>.human_name %>
+
+<table class="show">
+
+  <tr class="actions"><th colspan="2">
+<%- if action? :edit -%>
+  <%%= link_to t('form.edit'), edit_<%= singular_name %>_path(@<%= singular_name %>) %> |
+<%- end -%>
+<%- if action? :destroy -%>
+  <%%= link_to t('form.destroy'), <%= namespaced_singular_name %>, :confirm => 'Are you sure?', :method => :delete %> |
+<%- end -%>
+<%- if action? :index -%>
+  <%%= link_to t('form.view_all'), <%= plural_name %>_path %>
+<%- end -%>
+  </th></tr>
+
+<%- for attribute in attributes -%>
+  <tr>
+    <td class="label"><%%= <%= namespaced_class_name %>.human_attribute_name(:<%= attribute.name %>) %></td>
+    <td><%%=h @<%= singular_name %>.<%= attribute.name %> %></td>
+  </tr>
+<%- end -%>
+
+</table>
+
+
