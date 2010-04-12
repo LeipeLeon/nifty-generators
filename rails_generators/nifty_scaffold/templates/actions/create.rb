@@ -4,7 +4,8 @@
       if @<%= singular_name %>.save
         format.html {
           flash[:success] = t('flash.model.created', :model => <%= class_name %>.human_name )
-          redirect_to <%= item_path('url') %>
+          # redirect_to <%= item_path('url') %>
+          redirect_to <%= plural_name %>_path
         }
         format.js   { render :layout => false }
       else

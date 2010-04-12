@@ -8,5 +8,6 @@
     <%= class_name %>.any_instance.stubs(:valid?).returns(true)
     put :update, :id => @<%= singular_name %>.id
     flash[:success].should_not be_nil
-    response.should redirect_to(<%= item_path_for_spec('url') %>)
+    # response.should redirect_to(<%= item_path_for_spec('url') %>)
+    response.should redirect_to(<%= items_path('url') %>)
   end
