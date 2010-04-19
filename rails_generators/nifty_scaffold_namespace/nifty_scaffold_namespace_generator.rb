@@ -208,7 +208,7 @@ class NiftyScaffoldNamespaceGenerator < Rails::Generator::Base
   end
 
   def model_columns_for_attributes
-    class_name.constantize.columns.reject do |column|
+    namespaced_class_name.constantize.columns.reject do |column|
       column.name.to_s =~ /^(id|created_at|updated_at)$/
     end
   end
@@ -247,7 +247,7 @@ protected
 
   # is there a better way to do this? Perhaps with const_defined?
   def model_exists?
-    File.exist? destination_path("app/models/#{singular_name}.rb")
+    File.exist? destination_path("app/models/#{namespaced_class_name.downcase}.rb")
   end
 
   def read_template(relative_path)
